@@ -1,0 +1,11 @@
+{
+  "grant_type": "client_credentials",
+  "username": "reefadmin@mail-dev.tpinteractive.com",
+  "password": "Ch3nnai_Q@1",
+  "client_id": "iPuVfzcw3XhHY8vpwmHZjrt9Trmomf41f",
+  "client_secret": "pOma70OAbqwAd98KrQcvuu5lMhBSVw3Uw",
+  "scope": "ReefReview_AssignmentSet_API ReefReview_AuditLog_API ReefReview_Coding_API ReefReview_Dashboard_API ReefReview_Drive_API ReefReview_Jobs_API ReefReview_LoadFileImport_API ReefReview_Notifications_API ReefReview_ProductionSet_API ReefReview_Projects_API ReefReview_Reports_API ReefReview_Repository_API ReefReview_Search_API ReefReview_Identities_API ReefReview_Viewer_API ReefReview_UsageStatistics_API",
+  "url": "https://sso-stg.transperfect.com/connect/token",
+  "firstName": "Reef",
+  "lastName": "Admin"
+}
