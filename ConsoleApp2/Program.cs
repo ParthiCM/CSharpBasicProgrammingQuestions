@@ -9,146 +9,71 @@ namespace ConsoleApp2
     {
         public static bool CheckAnagram(string s1, string s2)
         {
+            
+            // using Array Sort ****
+
+            //var arr1 = s1.ToLower().ToCharArray();
+            //var arr2 = s2.ToLower().ToCharArray();
+            //if (s1.Length  != s2.Length)
+            //{
+            //    return false;
+            //}
+            //Array.Sort(arr1);
+            //Array.Sort(arr2);
+            //if (arr1.SequenceEqual(arr2))
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+
+            // using Array Dictionary
+
+            s1 = s1.ToLower();  
+            s2 = s2.ToLower(); 
+            
             if (s1.Length != s2.Length)
             {
                 return false;
             }
-            var arrOfS1 = s1.ToCharArray();
-            Array.Sort(arrOfS1);
-            var arrOfS2 = s2.ToCharArray();
-            Array.Sort(arrOfS2);
+            Dictionary<char, int> dic = new Dictionary<char, int>();
 
-            if (arrOfS1.ToArray().SequenceEqual(arrOfS2.ToArray()))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static int[] SortArray(int[] arr)
-        {
-            int temp = 0;
-            //for (int i = 0; i < intArray.Length; i++)
-            //{
-            //    for (int j = 0; j < (intArray.Length - 1); j++)
-            //    {
-            //        if (intArray[j] > intArray[j + 1])
-            //        {
-            //             temp = intArray[j+1];
-            //            intArray[j + 1] = intArray[i];
-            //            intArray[i] = temp;
-            //        }
-            //    }
-            //}
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = 0; j < arr.Length - 1; j++)
+            foreach (char c in s1) { 
+                if(!dic.ContainsKey(c))
                 {
-                    if (arr[j] > arr[j + 1])
-                    {
-                        temp = arr[j + 1];
-                        arr[j + 1] = arr[j];
-                        arr[j] = temp;
-                    }
-                }
-            }
-            return arr;
-        }
-
-        public static void PrintNumberOfOccurance(string val)
-        {
-            Dictionary<char,int> dic = new Dictionary<char,int>();
-
-            foreach (var item in val)
-            {
-                if (!dic.ContainsKey(item))
-                {
-                    dic.Add(item, 1);
+                    dic.Add(c, 1);
                 }
                 else
                 {
-                    dic[item]++;
+                    dic[c]++;
                 }
             }
 
-            foreach (var item in dic)
+            foreach (char c in s2)
             {
-                Console.WriteLine($"{item.Key} -- {item.Value}");
-            }
-
-        }
-        public static void CheckDictionary()
-        {
-            Dictionary<int,bool> dic = new Dictionary<int, bool>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                dic.Add(i, true );
-            }
-            for (int i = 11; i < 15; i++)
-            {
-                dic.Add(i, false);
-            }
-            
-            List<int> list = new List<int>();
-            foreach (var item in dic) 
-            {
-                if (item.Value.Equals(false))
+                if (!dic.ContainsKey(c) || dic[c] == 0)
                 {
-                    list.Add(item.Key);
+                    return false;
                 }
+
+                dic[c]--;
             }
-            
-            foreach (var item in dic)
-            {
-                Console.WriteLine($"{string.Format("Here's the list: ({0}).", string.Join(", ", list))}");
-                string.Format("This is a Test {0}" , string.Join(", ", list));
-            }
+            return true;
 
         }
-        //5 , 1,2,3,
-        static void GenerateFibonacci(int n)
+
+        public static void SortArray(int[] arr)
         {
-            int first = 0, second = 1, next;
-
-            Console.WriteLine("Fibonacci series up to " + n + " terms:");
-
-            //for (int i = 0; i < n; i++)
-            //{
-            //    if (i <= 1)
-            //    {
-            //        next = i;
-            //    }
-            //    else
-            //    {
-            //        next = first + second;
-            //        first = second;
-            //        second = next;
-            //    }
-            //    Console.Write(next + " ");
-            //}
-            //0 1 1 2 3 5
-            Console.Write($"{first},{second}");
-            for (int i = 2; i < n; i++)
+            foreach (var item in arr)
             {
-                next = first + second;
-                Console.Write($",{next}");
-                first = second;
-                second = next;
+                
             }
-            
-
-        }
-        public static string SortTheArrayOfIntegers(int[] arr) // [1,2,4,3]
-        {
             var temp = 0;
-            for (int i = 0; i < arr.Length; i++) //new int[] { 1, 5, 6, 8, 10, 0 }
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0;  j < arr.Length - 1;  j++)
+                for (int j = 0; j < arr.Length - 1 ; j++)
                 {
                     if (arr[j] > arr[j+1])
                     {
@@ -158,52 +83,161 @@ namespace ConsoleApp2
                     }
                 }
             }
-            return string.Join(", " , arr);
+
+            Console.WriteLine(string.Join(",", arr));
         }
 
-
-        public static void CheckNumberBeginWithOne(int[] arr)
+        public static void PrintNumberOfOccurrence(string str)
         {
-            //List<int> list = new List<int>();   
-            //foreach (var item in arr)
-            //{
-            //    var val = item.ToString().ToCharArray()[0];
-            //    if (val == '1')
-            //    {
-            //        list.Add(item);
-            //    }
-            //}
-            //Console.WriteLine(String.Format("The Result is {0}", String.Join(',', list))); 
-            List<int> list = new List<int>();
-            foreach (var item in arr)
+            Dictionary<char, int> dic = new Dictionary<char, int> ();
+
+            foreach (var c in str)
             {
-                int temp = item;
-                while (temp != 0)
+                if (!dic.ContainsKey(c))
                 {
-                    if (temp == 1)
-                    {
-                        list.Add(item);
-                    }
-                    temp = temp / 10;
+                    dic.Add(c, 1);
+                }
+                else
+                {
+                    dic[c]++;
                 }
             }
-            Console.WriteLine(String.Format("The Result is {0}", String.Join(',', list))); 
 
+            foreach (var c in dic)
+            {
+                Console.WriteLine($"{c.Key} -- {c.Value}" );
+            }
         }
 
+        public static void GenerateFibonacci(int n)
+        {
+            int first = 0, second = 1, next;
+
+            Console.Write($"{first},{second},");
+
+            for(int i = 2; i < n; i++)
+            {
+                next = first + second;
+                Console.Write($"{next},");
+                first = second;
+                second = next;
+            }
+
+            
+        }
+
+        public static void swapTwoVariable(int a , int b)
+        {
+            a = a + b;
+            b = a - b;
+            a = a - b;
+
+            Console.WriteLine( $" a = {a}, b = {b}");
+        }
+        /// <summary>
+        ///  3 2 1
+        ///  3 2 
+        ///  3
+        /// </summary>
+        /// <param name="num"></param>
+        public static void printPattern1(int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                for (int j = num; j > i ; j--)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine("");
+            }
+        }
+
+        /// <summary>
+        /// 1 
+        /// 1 2
+        /// 1 2 3
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+
+        public static void printPattern2(int num)
+        {
+            for (int i = 1; i <= num; i++)
+            {
+                for (int j = 1; j <= i ; j++)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine("");
+            }
+        }
+
+
+        /// <summary>
+        ///     *
+        ///    ***
+        ///   ***** 
+        ///  *******
+        /// </summary>
+        /// <param name="args"></param>
+        /// 
+
+        public static void printPattern3(int num)
+        {
+            
+        }
+
+        /// <summary>
+        /// *
+        /// **
+        /// ***
+        /// ****
+        /// <param name="args"></param>
+        /// 
+
+        public static void printPattern4(int num)
+        {
+            for (int i = 1; i <= num; i++)
+            {
+                for (int j = 1;  j <= i;  j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine("");
+            }
+        }
+
+
+        /// <summary>
+        /// 
+        /// <param name="args"></param>
+        /// 
+
+        public static void printPattern5(int num)
+        {
+            for (int i = 0; i <= num; i++)
+            {
+                for (int j = num; j > i; j--)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine("");
+            }
+        }
         public static void Main(string[] args)
         {
-            //var s1 = "Silent";
-            //var s2 = "Listen";
-            //Console.WriteLine($"Status = {CheckAnagram(s1.ToLower(), s2.ToLower())}"); ;
-            //int[] arr = { 10, 5, 8, 1, 2, 3, 4 };
-            //var res = SortArray(arr);
-            //Console.WriteLine();
-            //PrintNumberOfOccurance("paarthiii");
+            //Console.WriteLine($"Status = {CheckAnagram("Silent", "Listee")}");
+            //SortArray(new int[] { 10, 5, 8, 1, 2, 3, 4 });
+            //PrintNumberOfOccurrence("paarthiii");
             //GenerateFibonacci(10);
+            //swapTwoVariable(9, 10);
             //CheckDictionary();
-            Console.WriteLine(SortTheArrayOfIntegers(new int[] { 1, 5, 6, 8, 10, 0 })); 
+            //Console.WriteLine(SortTheArrayOfIntegers(new int[] { 1, 5, 6, 8, 10, 0 })); 
             // CheckNumberBeginWithOne(new int[] { 111, 51, 16, 18, 10, 1,0,-1 });
+            //printPattern1(3);
+            //printPattern2(3);
+            //printPattern4(4); 
+            printPattern5(4);
         }
 
 
