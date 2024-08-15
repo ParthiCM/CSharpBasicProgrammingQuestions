@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 # ingnoring ConsoleApp1
 ConsoleApp1
+/ConsoleApp1/ConsoleApp1.csproj
