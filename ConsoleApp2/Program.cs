@@ -2,6 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Text;
+using System.Diagnostics.Metrics;
 
 namespace ConsoleApp2
 {
@@ -9,7 +12,7 @@ namespace ConsoleApp2
     {
         public static bool CheckAnagram(string s1, string s2)
         {
-            
+
             // using Array Sort ****
 
             //var arr1 = s1.ToLower().ToCharArray();
@@ -31,17 +34,18 @@ namespace ConsoleApp2
 
             // using Array Dictionary
 
-            s1 = s1.ToLower();  
-            s2 = s2.ToLower(); 
-            
+            s1 = s1.ToLower();
+            s2 = s2.ToLower();
+
             if (s1.Length != s2.Length)
             {
                 return false;
             }
             Dictionary<char, int> dic = new Dictionary<char, int>();
 
-            foreach (char c in s1) { 
-                if(!dic.ContainsKey(c))
+            foreach (char c in s1)
+            {
+                if (!dic.ContainsKey(c))
                 {
                     dic.Add(c, 1);
                 }
@@ -68,14 +72,14 @@ namespace ConsoleApp2
         {
             foreach (var item in arr)
             {
-                
+
             }
             var temp = 0;
             for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j < arr.Length - 1 ; j++)
+                for (int j = 0; j < arr.Length - 1; j++)
                 {
-                    if (arr[j] > arr[j+1])
+                    if (arr[j] > arr[j + 1])
                     {
                         temp = arr[j + 1];
                         arr[j + 1] = arr[j];
@@ -89,7 +93,7 @@ namespace ConsoleApp2
 
         public static void PrintNumberOfOccurrence(string str)
         {
-            Dictionary<char, int> dic = new Dictionary<char, int> ();
+            Dictionary<char, int> dic = new Dictionary<char, int>();
 
             foreach (var c in str)
             {
@@ -105,7 +109,7 @@ namespace ConsoleApp2
 
             foreach (var c in dic)
             {
-                Console.WriteLine($"{c.Key} -- {c.Value}" );
+                Console.WriteLine($"{c.Key} -- {c.Value}");
             }
         }
 
@@ -115,7 +119,7 @@ namespace ConsoleApp2
 
             Console.Write($"{first},{second},");
 
-            for(int i = 2; i < n; i++)
+            for (int i = 2; i < n; i++)
             {
                 next = first + second;
                 Console.Write($"{next},");
@@ -123,16 +127,16 @@ namespace ConsoleApp2
                 second = next;
             }
 
-            
+
         }
 
-        public static void swapTwoVariable(int a , int b)
+        public static void swapTwoVariable(int a, int b)
         {
             a = a + b;
             b = a - b;
             a = a - b;
 
-            Console.WriteLine( $" a = {a}, b = {b}");
+            Console.WriteLine($" a = {a}, b = {b}");
         }
         /// <summary>
         ///  3 2 1
@@ -144,7 +148,7 @@ namespace ConsoleApp2
         {
             for (int i = 0; i < num; i++)
             {
-                for (int j = num; j > i ; j--)
+                for (int j = num; j > i; j--)
                 {
                     Console.Write(j + " ");
                 }
@@ -164,7 +168,7 @@ namespace ConsoleApp2
         {
             for (int i = 1; i <= num; i++)
             {
-                for (int j = 1; j <= i ; j++)
+                for (int j = 1; j <= i; j++)
                 {
                     Console.Write(j + " ");
                 }
@@ -184,7 +188,7 @@ namespace ConsoleApp2
 
         public static void printPattern3(int num)
         {
-            
+
         }
 
         /// <summary>
@@ -199,7 +203,7 @@ namespace ConsoleApp2
         {
             for (int i = 1; i <= num; i++)
             {
-                for (int j = 1;  j <= i;  j++)
+                for (int j = 1; j <= i; j++)
                 {
                     Console.Write("*");
                 }
@@ -224,6 +228,45 @@ namespace ConsoleApp2
                 Console.WriteLine("");
             }
         }
+
+        //{ 111, 51, 16, 18, 10, 1,0,-1 }
+        public static void CheckNumberBeginWithOne(int[] num)
+        {
+            List<int> list = new List<int>();
+            foreach (var item in num)
+            {
+                var temp = item;
+                while (temp != 0)
+                {
+                    if (temp / 10 == 1)
+                    {
+                        list.Add(item);
+                    }
+                    temp = temp / 10;
+                }
+            }
+            Console.WriteLine($"Numbers begins with 1 are {string.Join(",", list)}");
+        }
+        /// <summary>
+        ///  3 2 1
+        ///  3 2 
+        ///  3
+        /// </summary>
+        /// <param name="num"></param>
+        /// 
+        public static void printPattern(int num)
+        {
+            for (int i = 1; i <= num; i++)
+            {
+                for (int j = num; j >= i; j--)
+                {
+                    Console.Write($"{j} ");
+                }
+                Console.WriteLine("");
+            }
+        }
+
+
         public static void Main(string[] args)
         {
             //Console.WriteLine($"Status = {CheckAnagram("Silent", "Listee")}");
@@ -233,11 +276,13 @@ namespace ConsoleApp2
             //swapTwoVariable(9, 10);
             //CheckDictionary();
             //Console.WriteLine(SortTheArrayOfIntegers(new int[] { 1, 5, 6, 8, 10, 0 })); 
-            // CheckNumberBeginWithOne(new int[] { 111, 51, 16, 18, 10, 1,0,-1 });
+            //CheckNumberBeginWithOne(new int[] { 111, 51, 16, 18, 10, 1,0,-1 });
             //printPattern1(3);
             //printPattern2(3);
             //printPattern4(4); 
-            printPattern5(4);
+            //printPattern5(4);
+            //printPattern(4);
+            advancePrograms.ExpandString("a10b11c19d3");
         }
 
 
