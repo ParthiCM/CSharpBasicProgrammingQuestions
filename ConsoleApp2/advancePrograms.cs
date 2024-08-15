@@ -35,6 +35,8 @@ namespace ConsoleApp2
 
             dict.Add(currentChar, Int32.Parse(numberStore.ToString()));
 
+            Console.WriteLine($"Input : {str}");
+            Console.Write($"Output : ");
             foreach (var item in dict)
             {
                 for (int i = 0; i < item.Value; i++)
@@ -43,6 +45,22 @@ namespace ConsoleApp2
                 }
                 Console.Write(" ");
             }
+
+        }
+
+        // find the smallest not repeating number in two array
+
+        /// <summary>
+        ///     *
+        ///    ***
+        ///   ***** 
+        ///  *******
+        /// </summary>
+        /// <param name="args"></param>
+        /// 
+
+        public static void printPattern3(int num)
+        {
 
         }
 

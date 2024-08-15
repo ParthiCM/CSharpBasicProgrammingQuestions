@@ -12,28 +12,7 @@ namespace ConsoleApp2
     {
         public static bool CheckAnagram(string s1, string s2)
         {
-
-            // using Array Sort ****
-
-            //var arr1 = s1.ToLower().ToCharArray();
-            //var arr2 = s2.ToLower().ToCharArray();
-            //if (s1.Length  != s2.Length)
-            //{
-            //    return false;
-            //}
-            //Array.Sort(arr1);
-            //Array.Sort(arr2);
-            //if (arr1.SequenceEqual(arr2))
-            //{
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;
-            //}
-
             // using Array Dictionary
-
             s1 = s1.ToLower();
             s2 = s2.ToLower();
 
@@ -65,6 +44,25 @@ namespace ConsoleApp2
                 dic[c]--;
             }
             return true;
+
+            // using Array Sort ****
+
+            //var arr1 = s1.ToLower().ToCharArray();
+            //var arr2 = s2.ToLower().ToCharArray();
+            //if (s1.Length  != s2.Length)
+            //{
+            //    return false;
+            //}
+            //Array.Sort(arr1);
+            //Array.Sort(arr2);
+            //if (arr1.SequenceEqual(arr2))
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
 
         }
 
@@ -178,20 +176,6 @@ namespace ConsoleApp2
 
 
         /// <summary>
-        ///     *
-        ///    ***
-        ///   ***** 
-        ///  *******
-        /// </summary>
-        /// <param name="args"></param>
-        /// 
-
-        public static void printPattern3(int num)
-        {
-
-        }
-
-        /// <summary>
         /// *
         /// **
         /// ***
@@ -288,7 +272,6 @@ namespace ConsoleApp2
 
     }
 
-    // find the smallest not repeating number in two array
 }
 
 
