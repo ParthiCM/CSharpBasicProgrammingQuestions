@@ -93,9 +93,10 @@ namespace ConsoleApp2
 
             Console.WriteLine($"sorted arr {string.Join(",", arr)}");
             Console.WriteLine($"larger num is {largerNum} and new list {string.Join(",", list)}");
+
             for (int i = 0; i < list.Count; i++)
             {
-                for (int j = i + 1; j < list.Count - 1; j++)
+                for (int j = i + 1; j < list.Count ; j++)
                 {
                     // 1,2,5,7  16
                     // -1,3,5,8,12

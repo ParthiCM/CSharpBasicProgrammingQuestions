@@ -267,7 +267,7 @@ namespace ConsoleApp2
             //printPattern5(4);
             //printPattern(4);
             //advancePrograms.ExpandString("a10b11c19d3");
-            advancePrograms.SubsetSumEqualsMax(new int[] { 5, 7, 16, 1, 2 });
+            Console.WriteLine(advancePrograms.SubsetSumEqualsMax(new int[] { 10, 17, 6, 7, 2 }));
         }
 
 

@@ -89,3 +89,11 @@ This repository will help you find basic and advanced frequently asked programs 
     Output : aaaaaaaaaa bbbbbbbbbbb ccccccccccccccccccc ddd
 ```
 
+**2 : Cheack Subset Sum Equals Max**
+```bash
+    Input: new int[] {5,7,16,1,2}
+    Output: false
+    Input: new int[] {3,5,-1,8,12}
+    Output: true
+```
+
