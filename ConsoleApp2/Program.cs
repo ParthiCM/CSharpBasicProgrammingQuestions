@@ -267,7 +267,11 @@ namespace ConsoleApp2
             //printPattern5(4);
             //printPattern(4);
             //advancePrograms.ExpandString("a10b11c19d3");
-            Console.WriteLine(advancePrograms.SubsetSumEqualsMax(new int[] { 10, 17, 6, 7, 2 }));
+            //Console.WriteLine(advancePrograms.SubsetSumEqualsMax(new int[] { 10, 17, 6, 7, 2 }));
+            //advancePrograms.prefixSum(new int[] { 1, 2, 3, 4, 5, 6 },1,3);
+            //advancePrograms.LargestSubArrayWithEqualNumberOf0sAnd1s(new int[] { 0, 0, 1, 1, 0 });
+            //advancePrograms.TopKElement(new int[] { 1, 1, 2, 2, 2, 3, 3, 3 },2);
+            advancePrograms.slidingWindow(new int[] { 1, 1, 2, 2, 1, 2, 3, 3, 3 }, 6, 2);
         }
 
 

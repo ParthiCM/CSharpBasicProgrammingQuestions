@@ -89,7 +89,7 @@ This repository will help you find basic and advanced frequently asked programs 
     Output : aaaaaaaaaa bbbbbbbbbbb ccccccccccccccccccc ddd
 ```
 
-**2 : Cheack Subset Sum Equals Max**
+**2 : Check Subset Sum Equals Max**
 ```bash
     Input: new int[] {5,7,16,1,2}
     Output: false
@@ -97,3 +97,24 @@ This repository will help you find basic and advanced frequently asked programs 
     Output: true
 ```
 
+**3 : Prefix Sum**
+```bash
+    Input: nums = [1, 2, 3, 4, 5, 6], startIndex = 1, endIndex = 3
+    Output: 9
+```
+
+**4 : Top K Elements**
+```bash
+     Input = [1, 1, 1, 2, 2, 2, 3, 3] | K = 2
+     Output = [1, 2]
+
+     Input = [1,1,2,2,2,3,3,3] | K = 3
+     Output = [2,3]
+```
+
+**5 : Sliding Window**
+```bash
+     Input  = [1, 1, 2, 2, 1, 2, 3, 3, 3] | value To Check = 6 | window Length = 2
+     Output = 2
+
+```
